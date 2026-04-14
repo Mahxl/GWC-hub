@@ -6,11 +6,34 @@
     <title>Girls Who Code | UM-Dearborn</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
+        keyframes: {
+                growLine: {
+                    '0%': { transform: 'scaleX(0)' },
+                    '100%': { transform: 'scaleX(1)' },
+                },
+                popIn: {
+                    '0%': { transform: 'scale(0)', opacity: '0' },
+                    '80%': { transform: 'scale(1.2)', opacity: '1' },
+                    '100%': { transform: 'scale(1)', opacity: '1' },
+                }
+                },
+                animation: {
+                // The line takes 1 second to grow
+                'grow-line': 'growLine 1s ease-out forwards',
+                // The dot pops in quickly with a little bounce effect
+                'pop-in': 'popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+                },
             theme: {
                 extend: {
+                    fontFamily: {
+                        eb: ['EB Garamond', 'serif']
+                    },
                     colors: {
                         gwc: {
                             pink: '#d475ac',
@@ -24,16 +47,16 @@
     </script>
 </head>
 
-<body class="bg-white min-h-screen flex flex-col font-sans">
+<body class="bg-white min-h-screen flex flex-col font-eb">
 
-    <nav class="bg-white shadow-sm border-b-4 border-gwc-pink sticky top-0 z-50">
+    <nav class="bg-white shadow-sm border-b-4 border-gwc-pink sticky top-0 z-50 ">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             
-            <div class="flex items-center gap-2">
-                <img src="/static/uploads/gwclogo.png" alt="GWC Logo" class="h-8 md:h-10 lg:h-12 w-auto mr-3 object-contain">
+            <div class="flex items-center">
+                <img src="/static/uploads/gwclogo.png" alt="GWC Logo" class="sm:h-8 md:h-10 lg:h-12 w-auto mr-3 object-contain">
             </div>
 
-            <div class="space-x-6 font-medium text-sm flex items-center">
+            <div class="space-x-10 font-medium text-sm flex items-center">
                 <a href="#home" class="text-black hover:text-gwc-pink transition">Home</a>
                 <a href="#about" class="text-black hover:text-gwc-pink transition">About</a>
                 <a href="#events" class="text-black hover:text-gwc-pink transition">Events</a>
@@ -52,26 +75,52 @@
         
     </main>
 
-    <section class="bg-gwc-pink text-white grid grid-cols-2py-12 text-center w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 py-16">
-            <img src="/static/uploads/gwclogo.png" alt="GWC Logo" class="h-12 w-auto mx-auto md:mx-0">
-            <h5 class="text-md mb-4 tracking-tight">Bravery.Sisterhood.Activism</h5>
-            <p class="text-pink-100 mb-8 text-lg">Reach out to the board for collaborations, event ideas, or just to say hi.</p>
-        </div>
-        <div class = "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 py-16">
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="mailto:gwc-dearborn@umich.edu" class="bg-white text-gwc-pink px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-md flex items-center gap-2">
-                    <span>✉️</span> Email the Board
-                </a>
+  <section class="bg-gwc-pink text-white py-4 w-full">
+        <div class="max-w-6xl mx-auto px-4">
+                    
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 p-8 items-start">
                 
-                <a href="#" class="bg-[#d63384] text-white border border-pink-400 px-8 py-3 rounded-lg font-bold hover:bg-pink-700 transition shadow-md flex items-center gap-2">
-                    <span>📱</span> Follow our Instagram
-                </a>
+                <nav class="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="/static/uploads/gwclogo.png" alt="GWC Logo" class="h-12 w-auto brightness-0 invert">
+                        <p class="text-xl font-black tracking-tighter text-white">Girls Who Code | UM-D</p>
+                    </div>
+                    <h5 class="text-sm font-semibold tracking-tight">Bravery. Sisterhood. Activism.</h5>
+                    <p class="text-pink-100 text-sm max-w-md">Contact us for any inquiries on social media</p>
+                </nav>
+
+                <div class="flex flex-col gap-3 items-center md:items-start mt-8 md:mt-0">
+                    <h3 class="text-xl font-bold">About</h3>
+                    <a class="font-semibold hover:underline flex items-center gap-2" href="/about">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2" aria-hidden="true"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg> Organization
+                    </a>
+                    <a class="font-semibold hover:underline flex items-center gap-2" href="/donate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>Donate
+                    </a>
+                    <a class="font-semibold hover:underline flex items-center gap-2" href="/contact">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-contact-round" aria-hidden="true"><path d="M16 2v2"></path><path d="M17.915 22a6 6 0 0 0-12 0"></path><path d="M8 2v2"></path><circle cx="12" cy="12" r="4"></circle><rect x="3" y="4" width="18" height="18" rx="2"></rect></svg>Contact Us
+                    </a>
+                </div>
+
+                <nav class="flex flex-col gap-3 items-center md:items-start mt-8 md:mt-0">
+                    <h3 class="text-xl font-bold">Connect</h3>
+                    <a class="font-semibold hover:underline flex items-center gap-2" href="https://www.instagram.com/gwc_umdearborn" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>Instagram
+                    </a>
+                    <a class="font-semibold hover:underline flex items-center gap-2" href="https://www.linkedin.com/company/girls-who-code-um-dearborn" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn
+                    </a>
+                    <a class="font-semibold hover:underline flex items-center gap-2" href="mailto:gwcumdearborn@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>Email
+                    </a>
+                </nav>
+                
             </div>
+            
         </div>
     </section>
     <footer class="bg-gwc-dark text-gray-400 py-8 text-center mt-auto w-full">
-        <p class="font-medium text-gwc-pink mb-2">Girls Who Code • UM-Dearborn est.2026</p>
+        <p class="font-medium text-gwc-teal mb-2">Girls Who Code • UM-Dearborn est.2026</p>
     </footer>
 
 </body>
