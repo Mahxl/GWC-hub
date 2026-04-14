@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls Who Code | UM-Dearborn</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gwc: {
+                            pink: '#d475ac',
+                            teal: "#318889",
+                            light: "#f4bae4"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white min-h-screen flex flex-col font-sans">
+
+    <nav class="bg-white shadow-sm border-b-4 border-gwc-pink sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            
+            <div class="flex items-center gap-2">
+                <img src="/static/uploads/gwclogo.png" alt="GWC Logo" class="h-8 md:h-10 lg:h-12 w-auto mr-3 object-contain">
+            </div>
+
+            <div class="space-x-6 font-medium text-sm flex items-center">
+                <a href="#home" class="text-black hover:text-gwc-pink transition">Home</a>
+                <a href="#about" class="text-black hover:text-gwc-pink transition">About</a>
+                <a href="#events" class="text-black hover:text-gwc-pink transition">Events</a>
+                <a href="#resources" class="text-black hover:text-gwc-pink transition">Resources</a>
+                <a href="#newsletter" class="text-black hover:text-gwc-pink transition">Newsletter</a>
+                <a href="#donate" class="text-black hover:text-gwc-pink transition">Donate</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full">
+        
+        {% block content %}
+        {% endblock %}
+        
+    </main>
+
+    <section class="bg-gwc-pink text-white grid grid-cols-2py-12 text-center w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 py-16">
+            <img src="/static/uploads/gwclogo.png" alt="GWC Logo" class="h-12 w-auto mx-auto md:mx-0">
+            <h5 class="text-md mb-4 tracking-tight">Bravery.Sisterhood.Activism</h5>
+            <p class="text-pink-100 mb-8 text-lg">Reach out to the board for collaborations, event ideas, or just to say hi.</p>
+        </div>
+        <div class = "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 py-16">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="mailto:gwc-dearborn@umich.edu" class="bg-white text-gwc-pink px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-md flex items-center gap-2">
+                    <span>✉️</span> Email the Board
+                </a>
+                
+                <a href="#" class="bg-[#d63384] text-white border border-pink-400 px-8 py-3 rounded-lg font-bold hover:bg-pink-700 transition shadow-md flex items-center gap-2">
+                    <span>📱</span> Follow our Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gwc-dark text-gray-400 py-8 text-center mt-auto w-full">
+        <p class="font-medium text-gwc-pink mb-2">Girls Who Code • UM-Dearborn est.2026</p>
+    </footer>
+
+</body>
+</html>
