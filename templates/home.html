@@ -1,69 +1,160 @@
 {% extends "base.html" %}
 
 {% block content %}
-   <section id="home" class="relative bg-white text-gwc-pink py-20 w-full">
-    <div class=" mx-auto px-4 flex flex-col items-start gap-8">
-        
-        <h1 class="font-eb text-4xl text-center md:text-5xl font-bold leading-tight mx-auto">
-            Empowering the Next Generation of Women in Tech at <br><span class="text-gwc-teal">UM-Dearborn</span>
-        </h1>
-        
-    <div class="flex items-center w-full mx-auto px-4 gap-6 mt-8">
+<section id="home" class="bg-white">
+  <!-- HERO -->
+  <div class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     
-    <h2 class="text-left text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-know-base-beige whitespace-nowrap">
-        ABOUT US
-    </h2>
-    
-    <div class="relative flex-grow flex items-center">
-        <div class="absolute left-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gwc-teal animate-pop-in z-10"></div>
-        
-        <div class="h-1 w-full bg-gwc-pink animate-grow-line origin-left ml-2"></div>
-    </div>
-    </div>
-    <div class=" flex-1 mx-auto mt-2 max-w-3xl">
-     <p class=" items-center text-center text-lg sm:text-base md:text-lg lg:text-xl text-black mt-2 max-w-3xl">
-        Girls Who Code at the University of Michigan-Dearborn is a student-led organization dedicated to closing the gender gap in technology. We provide a supportive community and resources for women interested in computer science, offering workshops, mentorship, and networking opportunities to empower the next generation of female technologists.
-    </p>    
-    </div>
-    <div class="max-w-6xl mx-auto px-4 mt-10">
-        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            
-            <li class="flex flex-col items-center text-center group">
-                <div class="text-6xl md:text-7xl font-black text-gwc-pink mb-2 tracking-tighter">200</div>
-                <div class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">UM-Dearborn Served</div>
-                <div class="text-gray-500 text-sm leading-relaxed max-w-[250px]">
-                    Girls Who Code has served 200 girls, women, and nonbinary individuals
-                </div>
-            </li>
+    <div>
+      <p class="uppercase tracking-[0.25em] text-sm text-gwc-teal font-semibold mb-4">
+        University of Michigan-Dearborn
+      </p>
 
-            <li class="flex flex-col items-center text-center">
-                <div class="text-6xl md:text-7xl font-black text-gwc-teal mb-2 tracking-tighter">150+</div>
-                <div class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Mentees Reached</div>
-                <div class="text-gray-500 text-sm leading-relaxed max-w-[250px]">
-                    There are 330,000 Girls Who Code alumni who are college-aged or post-college aged
-                </div>
-            </li>
+      <h1 class="text-5xl md:text-6xl font-bold text-gwc-pink leading-tight mb-6">
+        Inspiring the Next Generation of Girls Who Code
+      </h1>
 
-            <li class="flex flex-col items-center text-center">
-                <div class="text-6xl md:text-7xl font-black text-gwc-pink mb-2 tracking-tighter">40+</div>
-                <div class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Events Hosted</div>
-                <div class="text-gray-500 text-sm leading-relaxed max-w-[250px]">
-                    We taught over 8,000 students about AI through our Summer Programs in 2024
-                </div>
-            </li>
+      <p class="text-lg text-gray-700 leading-relaxed mb-8 max-w-xl">
+        Girls Who Code at UM-Dearborn is a student-led organization building a strong community
+        where students can grow technically, professionally, and personally through mentorship,
+        leadership, and hands-on opportunities in tech.
+      </p>
 
-            <li class="flex flex-col items-center text-center">
-                <div class="text-6xl md:text-7xl font-black text-gwc-teal mb-2 tracking-tighter">2</div>
-                <div class="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3">Conferences</div>
-                <div class="text-gray-500 text-sm leading-relaxed max-w-[250px]">
-                    We taught over 8,000 students about AI through our Summer Programs in 2024
-                </div>
-            </li>
-
-        </ul>
+      <div class="flex flex-wrap gap-4">
+        <a href="/about" class="bg-gwc-pink text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+          Learn More
+        </a>
+        <!-- TODO: replace with your actual future events/newsletter link -->
+        <a href="#impact" class="border-2 border-gwc-teal text-gwc-teal px-6 py-3 rounded-full font-semibold hover:bg-gwc-teal hover:text-white transition">
+          Our Impact
+        </a>
+      </div>
     </div>
+
+    <div>
+      <img
+        src="{{ url_for('static', filename='uploads/group.jpg') }}"
+        alt="Girls Who Code UM-Dearborn"
+        class="w-full h-[420px] object-cover rounded-[2rem] shadow-xl"
+      >
+    </div>
+
+  </div>
+
+  <!-- IMPACT -->
+  <div id="impact" class="bg-[#fff7fb] py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-gwc-teal font-semibold uppercase tracking-[0.2em] text-sm mb-3">
+          Our Impact
+        </p>
+        <h2 class="text-4xl font-bold text-gwc-pink mb-4">
+          Building community, confidence, and opportunity
+        </h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Through technical workshops, mentorship, outreach, and signature events, our chapter
+          is creating spaces where women in tech can thrive.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-3xl p-8 shadow-sm text-center">
+          <h3 class="text-5xl font-bold text-gwc-pink mb-3">200+</h3>
+          <p class="font-semibold text-gray-900 mb-2">Students Engaged</p>
+          <p class="text-sm text-gray-600">Across chapter members, outreach participants, and event attendees.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm text-center">
+          <h3 class="text-5xl font-bold text-gwc-teal mb-3">150+</h3>
+          <p class="font-semibold text-gray-900 mb-2">Mentees Reached</p>
+          <p class="text-sm text-gray-600">Through workshops, mentorship, and community programming.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm text-center">
+          <h3 class="text-5xl font-bold text-gwc-pink mb-3">40+</h3>
+          <p class="font-semibold text-gray-900 mb-2">Events Hosted</p>
+          <p class="text-sm text-gray-600">From technical workshops to socials and professional development.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm text-center">
+          <h3 class="text-5xl font-bold text-gwc-teal mb-3">200+</h3>
+          <p class="font-semibold text-gray-900 mb-2">TechHer Attendees</p>
+          <p class="text-sm text-gray-600">A large-scale outreach experience designed to inspire future leaders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <div class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <img
+        src="{{ url_for('static', filename='uploads/SLA.JPG') }}"
+        alt="Girls Who Code workshop"
+        class="w-full h-[450px] object-cover rounded-[2rem] shadow-xl"
+      >
+    </div>
+
+    <div>
+      <p class="text-gwc-teal font-semibold uppercase tracking-[0.2em] text-sm mb-3">
+        What We Do
+      </p>
+      <h2 class="text-4xl font-bold text-gwc-pink mb-6">
+        More than coding
+      </h2>
+
+      <p class="text-gray-700 leading-relaxed mb-8">
+        Our chapter is built around the idea that women in tech deserve more than a seat in the room.
+        We create opportunities to learn, lead, mentor, and build lasting connections with a community
+        that believes in each other.
+      </p>
+
+      <div class="space-y-5">
+        <div class="bg-gray-50 rounded-2xl p-5">
+          <h3 class="font-bold text-gwc-teal mb-1">Technical Growth</h3>
+          <p class="text-gray-700 text-sm">Workshops in web development, AI, cybersecurity, app development, and more.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-5">
+          <h3 class="font-bold text-gwc-teal mb-1">Professional Development</h3>
+          <p class="text-gray-700 text-sm">Panels, networking events, resume support, and career-building opportunities.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-5">
+          <h3 class="font-bold text-gwc-teal mb-1">Mentorship & Outreach</h3>
+          <p class="text-gray-700 text-sm">Programming designed to support both college members and the next generation of girls in tech.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURE SECTION -->
+  <div class="bg-gwc-teal py-20">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div class="text-white">
+        <p class="uppercase tracking-[0.2em] text-sm font-semibold mb-3">
+          Signature Initiative
+        </p>
+        <h2 class="text-4xl font-bold mb-5">TechHer Conference</h2>
+        <p class="leading-relaxed text-white/90 mb-6">
+          TechHer is one of our signature outreach experiences, bringing together students,
+          mentors, and educators for a day centered on exploration, empowerment, and belonging
+          in computer science and engineering.
+        </p>
+
+        <a href="/techHer" class="inline-block bg-white text-gwc-pink px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+          Read Our Story
+        </a>
+      </div>
+
+      <div>
+        <img
+          src="{{ url_for('static', filename='uploads/techHer.jpg') }}"
+          alt="TechHer or featured event"
+          class="w-full h-[360px] object-cover rounded-[2rem] shadow-xl"
+        >
+      </div>
+    </div>
+  </div>
 </section>
-
-    
-
 {% endblock %}
