@@ -111,5 +111,9 @@ def showEvents():
     past = PastEventStrategy().filter(event_objects)
     return render_template('events.html', upcoming=upcoming, past=past)
 
+@app.route('/techHer')
+def techher():
+    return render_template('techHer.html')
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
