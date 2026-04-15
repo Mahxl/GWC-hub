@@ -14,6 +14,10 @@ def about():
 def events():
     return render_template("events.html")
 
+@app.route('/techHer')
+def techher():
+    return render_template("techHer.html")
+
 @app.route('/resources')
 def resources():
     return render_template("resources.html")

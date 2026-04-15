@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="bg-white">
+
+  <!-- HERO -->
+  <div class="bg-[#fff4f9] border-b border-pink-100">
+    <div class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="uppercase tracking-[0.2em] text-sm text-gwc-teal font-semibold mb-4">
+          Signature Event
+        </p>
+        <h1 class="text-5xl md:text-6xl font-bold text-gwc-pink mb-6 leading-tight">
+          TechHer Conference
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed mb-8 max-w-xl">
+          A day designed to inspire the next generation of girls in computer science,
+          engineering, and technology through mentorship, hands-on activities,
+          community, and exploration.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#highlights" class="bg-gwc-pink text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+            Event Highlights
+          </a>
+          <a href="#gallery" class="border-2 border-gwc-teal text-gwc-teal px-6 py-3 rounded-full font-semibold hover:bg-gwc-teal hover:text-white transition">
+            View Gallery
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <img
+          src="{{ url_for('static', filename='uploads/techHer1.jpg') }}"
+          alt="TechHer Conference"
+          class="w-full h-[430px] object-cover rounded-[2rem] shadow-xl"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-14">
+      <p class="uppercase tracking-[0.2em] text-sm text-gwc-teal font-semibold mb-3">
+        Event Overview
+      </p>
+      <h2 class="text-4xl font-bold text-gwc-pink mb-4">
+        What TechHer was all about
+      </h2>
+      <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        TechHer was created to introduce high school girls to the possibilities within
+        computer science and engineering through a full day of interactive experiences.
+        Students had the opportunity to connect with college mentors, participate in
+        hands-on activities, hear from faculty and professionals, and explore what a
+        future in tech can look like.
+      </p>
+    </div>
+
+  <div class="bg-white py-20">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- SECTION TITLE -->
+    <div class="text-center mb-16">
+      <p class="uppercase tracking-[0.2em] text-sm text-gwc-teal font-semibold mb-3">
+        Impact
+      </p>
+      <h2 class="text-4xl font-bold text-gwc-pink">
+        The impact of TechHer
+      </h2>
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+      <div class="text-center md:text-center">
+        <h2 class="text-5xl font-bold text-gwc-teal mb-2">200+</h2>
+        <p class="uppercase text-sm tracking-wide text-gwc-pink font-semibold mb-3">
+          Attendees
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Students, mentors, and educators came together for a full day of exploration,
+          learning, and connection in tech.
+        </p>
+      </div>
+
+      <div class="text-center md:text-center">
+        <h2 class="text-5xl font-bold text-gwc-teal mb-2">130</h2>
+        <p class="uppercase text-sm tracking-wide text-gwc-pink font-semibold mb-3">
+          High School Students
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Students from 6 high schools participated in engineering games, mock classes, and a scavenger hunt.
+        </p>
+      </div>
+
+      <div class="text-center md:text-center">
+        <h2 class="text-5xl font-bold text-gwc-teal mb-2">60</h2>
+        <p class="uppercase text-sm tracking-wide text-gwc-pink font-semibold mb-3">
+          Volunteers
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Dedicated volunteers supported students throughout the day,
+          helping lead stations and groups.
+        </p>
+      </div>
+
+      <div class="text-center md:text-center">
+        <h2 class="text-5xl font-bold text-gwc-teal mb-2">3</h2>
+        <p class="uppercase text-sm tracking-wide text-gwc-pink font-semibold mb-3">
+          Mock Classes
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Professors led 3 introductory engineering and computer science mock classes.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <!-- WHAT THE GIRLS DID -->
+  <div id="highlights" class="bg-[#f9fcfc] py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14"> 
+        <p class="uppercase tracking-[0.2em] text-sm text-gwc-teal font-semibold mb-3">
+          Highlights
+        </p>
+        <h2 class="text-4xl font-bold text-gwc-pink mb-4">
+          What the girls experienced throughout the day
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-[2rem] p-8 shadow-sm">
+          <h3 class="text-2xl font-bold text-gwc-teal mb-3">Opening Session</h3>
+          <p class="text-gray-700 leading-relaxed">
+            The day began with a warm welcome, opening remarks, and an introduction to
+            the goals of TechHer. Students were invited into a space centered on confidence,
+            exploration, and possibility.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-8 shadow-sm">
+          <h3 class="text-2xl font-bold text-gwc-teal mb-3">Hands-On Activities</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Students participated in engaging engineering and technology activities that
+            gave them a chance to build, problem-solve, and see themselves reflected in
+            hands-on learning.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-8 shadow-sm">
+          <h3 class="text-2xl font-bold text-gwc-teal mb-3">Mock Classes</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Faculty-led sessions introduced students to topics within engineering and computer
+            science, giving them a glimpse into what learning in these fields can look like
+            at the college level.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-8 shadow-sm">
+          <h3 class="text-2xl font-bold text-gwc-teal mb-3">Mentorship & Connection</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Throughout the event, students connected with college mentors, volunteers,
+            and speakers who encouraged them, answered questions, and shared their own
+            journeys in STEM.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-8 shadow-sm">
+          <h3 class="text-2xl font-bold text-gwc-teal mb-3">Scavenger Hunt & Exploration</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Interactive challenges kept students engaged while encouraging them to explore
+            the space, collaborate with one another, and make the most of every part of the day.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-8 shadow-sm">
+          <h3 class="text-2xl font-bold text-gwc-teal mb-3">Closing Celebration</h3>
+          <p class="text-gray-700 leading-relaxed">
+            The event ended with a celebration of everything the students had experienced,
+            recognizing participation, sharing encouragement, and ending the day on an uplifting note.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE STYLE SECTION -->
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold text-gwc-pink mb-4">
+        A full day of inspiration
+      </h2>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Here’s a simple recap of how the day flowed.
+      </p>
+    </div>
+
+    <div class="space-y-6 max-w-4xl mx-auto">
+      <div class="border-l-4 border-gwc-pink pl-6 py-2">
+        <h3 class="text-xl font-bold text-gwc-teal">Morning Welcome</h3>
+        <p class="text-gray-700">Students arrived, checked in, explored the space, and joined the opening session.</p>
+      </div>
+
+      <div class="border-l-4 border-gwc-pink pl-6 py-2">
+        <h3 class="text-xl font-bold text-gwc-teal">Interactive Sessions</h3>
+        <p class="text-gray-700">Students rotated through mock classes, activities, and hands-on learning opportunities.</p>
+      </div>
+
+      <div class="border-l-4 border-gwc-pink pl-6 py-2">
+        <h3 class="text-xl font-bold text-gwc-teal">Community & Exploration</h3>
+        <p class="text-gray-700">The day included time for meeting mentors, participating in challenges, and building connections.</p>
+      </div>
+
+      <div class="border-l-4 border-gwc-pink pl-6 py-2">
+        <h3 class="text-xl font-bold text-gwc-teal">Celebration & Closing</h3>
+        <p class="text-gray-700">Students wrapped up the event with reflections, recognition, and encouragement for the future.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div id="gallery" class="bg-[#fff4f9] py-20 border-y border-pink-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="uppercase tracking-[0.2em] text-sm text-gwc-teal font-semibold mb-3">
+          Photo Gallery
+        </p>
+        <h2 class="text-4xl font-bold text-gwc-pink mb-4">
+          Moments from TechHer
+        </h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Add your favorite photos from the day here to show the energy, learning,
+          and community that made TechHer special.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <!-- TODO: Replace these with TechHer photos -->
+        <img src="{{ url_for('static', filename='uploads/WLS.jpg') }}" class="w-full h-72 object-cover rounded-2xl shadow-sm" alt="TechHer photo 1">
+        <img src="{{ url_for('static', filename='uploads/about-1.JPG') }}" class="w-full h-96 object-cover rounded-2xl shadow-sm" alt="TechHer photo 2">
+        <img src="{{ url_for('static', filename='uploads/SLA.JPG') }}" class="w-full h-72 object-cover rounded-2xl shadow-sm" alt="TechHer photo 3">
+        <img src="{{ url_for('static', filename='uploads/board.png') }}" class="w-full h-96 object-cover rounded-2xl shadow-sm" alt="TechHer photo 4">
+        <img src="{{ url_for('static', filename='uploads/interns.png') }}" class="w-full h-72 object-cover rounded-2xl shadow-sm" alt="TechHer photo 5">
+        <img src="{{ url_for('static', filename='uploads/WLS.jpg') }}" class="w-full h-96 object-cover rounded-2xl shadow-sm" alt="TechHer photo 6">
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h2 class="text-4xl font-bold text-gwc-pink mb-6">
+      Why TechHer matters
+    </h2>
+    <p class="text-lg text-gray-700 leading-relaxed">
+      TechHer is about more than a single event. It is about helping young girls see that
+      they belong in spaces of innovation, leadership, and technology. By creating these
+      experiences, we hope to continue inspiring confidence, curiosity, and long-term impact
+      for the next generation of Girls Who Code.
+    </p>
+  </div>
+
+</section>
+{% endblock %}
