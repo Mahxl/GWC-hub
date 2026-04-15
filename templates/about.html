@@ -1,65 +1,131 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="bg-white py-20 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h1 class="text-5xl font-bold text-gwc-pink mb-6 text-center">About Us</h1>
-
-    <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center leading-relaxed mb-12">
-      Girls Who Code at the University of Michigan-Dearborn is a student-led organization
-      dedicated to closing the gender gap in technology. We create a supportive community
-      through technical workshops, professional development, mentorship, and outreach.
+<section class="bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+    <p class="uppercase tracking-[0.2em] text-sm text-gwc-teal font-semibold mb-4">
+      About Girls Who Code UM-Dearborn
     </p>
-
-    <h2 class="text-3xl font-bold text-gwc-pink mb-6 text-center">Board Members & Interns Who Make the Magic Happen</h2>
-
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-      <div>
-        <img
-          src="{{ url_for('static', filename='uploads/board.png') }}"
-          alt="Girls Who Code team"
-          class="rounded-2xl shadow-lg w-full object-cover"
-        >
-      </div>
-    
-      <div>
-        <img
-          src="{{ url_for('static', filename='uploads/interns.png') }}"
-          alt="Girls Who Code team"
-          class="rounded-2xl shadow-lg w-full object-cover"
-        >
-      </div>
-
-      <div>
-    <h2 class="text-3xl font-bold text-gwc-teal mb-4 mt-10">Our Mission</h2>
-    <p class="text-gray-700 leading-relaxed mb-10">
-      Our mission is to empower women in tech by creating spaces where students can grow
-      technically, professionally, and personally.
+    <h1 class="text-5xl font-bold text-gwc-pink mb-6">
+      Built on sisterhood, leadership, and impact
+    </h1>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+      Girls Who Code at the University of Michigan-Dearborn is a student-led chapter committed
+      to closing the gender gap in technology by building spaces where students feel empowered
+      to learn, lead, and make an impact in their communities.
     </p>
+  </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-      
-      <img src="{{ url_for('static', filename='uploads/about-1.jpg') }}" 
-           class="rounded-xl object-cover w-full h-48 hover:scale-105 transition duration-300">
-      
-      <img src="{{ url_for('static', filename='uploads/SLA.jpg') }}" 
-           class="rounded-xl object-cover w-full h-64 hover:scale-105 transition duration-300">
-      
-      <img src="{{ url_for('static', filename='uploads/WLS.jpg') }}" 
-           class="rounded-xl object-cover w-full h-48 hover:scale-105 transition duration-300">
-    
-    
+  <div class="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-3xl font-bold text-gwc-teal mb-5">Our Mission</h2>
+      <p class="text-gray-700 leading-relaxed mb-5">
+        Our mission is to empower women in technology through community, technical learning,
+        professional development, and outreach. We want every student who joins our chapter
+        to feel supported in growing their confidence, skills, and sense of belonging.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        We are not just preparing students for careers in tech. We are building leaders,
+        mentors, advocates, and changemakers who will shape the future of the field.
+      </p>
     </div>
 
+    <div>
+      <!-- TODO: Replace with a strong community image -->
+      <img
+        src="{{ url_for('static', filename='uploads/about-1.JPG') }}"
+        alt="Girls Who Code community"
+        class="w-full h-[420px] object-cover rounded-[2rem] shadow-xl"
+      >
+    </div>
+  </div>
 
-        <h2 class="text-3xl font-bold text-gwc-teal mb-4 mt-8">What We Do</h2>
-        <ul class="space-y-3 text-gray-700">
-          <li>Technical workshops in web development, AI, cybersecurity, and more</li>
-          <li>Professional development events and networking opportunities</li>
-          <li>Mentorship for K-12 students and college members</li>
-          <li>Community-building events that strengthen sisterhood</li>
-        </ul>
+  <div class="bg-[#f9fcfc] py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gwc-pink mb-4">The people behind the mission</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Our board and interns help bring every workshop, mentorship opportunity, and community event to life.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="bg-white rounded-[2rem] p-6 shadow-sm">
+          <!-- TODO: Replace with updated board photo if needed -->
+          <img
+            src="{{ url_for('static', filename='uploads/board.png') }}"
+            alt="Board members"
+            class="w-full h-[320px] object-cover rounded-2xl mb-5"
+          >
+          <h3 class="text-2xl font-bold text-gwc-teal mb-2">Board Members</h3>
+          <p class="text-gray-700">
+            The board leads chapter strategy, programming, outreach, partnerships, and member experience.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-6 shadow-sm">
+          <!-- TODO: Replace with updated interns photo if needed -->
+          <img
+            src="{{ url_for('static', filename='uploads/interns.png') }}"
+            alt="Interns"
+            class="w-full h-[320px] object-cover rounded-2xl mb-5"
+          >
+          <h3 class="text-2xl font-bold text-gwc-teal mb-2">Interns</h3>
+          <p class="text-gray-700">
+            Our interns grow through leadership development, hands-on planning experience, and mentorship from the board.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="mb-10">
+      <h2 class="text-4xl font-bold text-gwc-pink mb-4 text-center">Moments that matter</h2>
+      <p class="text-gray-700 text-center max-w-2xl mx-auto">
+        From workshops and networking events to outreach and large-scale initiatives, our chapter is rooted in meaningful experiences.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <img src="{{ url_for('static', filename='uploads/about-1.JPG') }}" class="w-full h-64 object-cover rounded-2xl shadow-sm" alt="womens history month celebration">
+      <img src="{{ url_for('static', filename='uploads/SLA.JPG') }}" class="w-full h-80 object-cover rounded-2xl shadow-sm" alt="student leadership awards">
+      <img src="{{ url_for('static', filename='uploads/WLS.jpg') }}" class="w-full h-64 object-cover rounded-2xl shadow-sm" alt="women leadership summit">
+      <img src="{{ url_for('static', filename='uploads/galantines.jpg') }}" class="w-full h-64 object-cover rounded-2xl shadow-sm" alt="galantines">
+      <img src="{{ url_for('static', filename='uploads/techHer1.jpg') }}" class="w-full h-80 object-cover rounded-2xl shadow-sm" alt="techHer opening ceremony">
+      <img src="{{ url_for('static', filename='uploads/appDev.jpg') }}" class="w-full h-64 object-cover rounded-2xl shadow-sm" alt="app dev workshops">
+    </div>
+  </div>
+
+  <div class="bg-gwc-teal py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-white mb-4">What we do</h2>
+        <p class="text-white/90 max-w-2xl mx-auto">
+          Our work is centered around creating meaningful, lasting pathways into technology and leadership.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-3xl p-6">
+          <h3 class="font-bold text-gwc-pink mb-2">Technical Workshops</h3>
+          <p class="text-gray-700 text-sm">Hands-on learning opportunities across multiple areas of tech.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6">
+          <h3 class="font-bold text-gwc-pink mb-2">Professional Development</h3>
+          <p class="text-gray-700 text-sm">Events focused on confidence, careers, networking, and growth.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6">
+          <h3 class="font-bold text-gwc-pink mb-2">Mentorship</h3>
+          <p class="text-gray-700 text-sm">Support systems for both college members and younger students.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6">
+          <h3 class="font-bold text-gwc-pink mb-2">Outreach</h3>
+          <p class="text-gray-700 text-sm">Programs and initiatives designed to inspire the next generation.</p>
+        </div>
       </div>
     </div>
   </div>
