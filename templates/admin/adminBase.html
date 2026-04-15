@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex min-h-screen bg-gray-50">
+    
+    <aside class="w-64 bg-slate-800 text-white flex flex-col shadow-lg">
+        <div class="p-6 text-center border-b border-slate-700">
+            <h2 class="text-xl font-bold text-teal-400">Admin Portal</h2>
+            <p class="text-sm text-slate-400 mt-1">Hello, {{ session.get('name') }}</p>
+        </div>
+        
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="/admin/dashboard" class="block py-2.5 px-4 rounded transition hover:bg-slate-700 hover:text-teal-300">
+                Manage Events
+            </a>
+            
+            <a href="/admin/resources" class="block py-2.5 px-4 rounded transition hover:bg-slate-700 hover:text-teal-300">
+               Resources
+            </a>
+            
+            <a href="#" class="block py-2.5 px-4 rounded transition hover:bg-slate-700 text-slate-500">
+                Newsletters 
+            </a>
+        </nav>
+        
+    </aside>
+
+    <main class="flex-1 p-10 overflow-y-auto">
+        {% block admin_content %}
+        {% endblock %}
+    </main>
+
+</div>
+{% endblock %}

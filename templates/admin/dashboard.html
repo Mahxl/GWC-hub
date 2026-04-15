@@ -1,0 +1,150 @@
+{% extends "adminBase.html" %}
+
+{% block admin_content %}
+<div class="max-w-6xl mx-auto py-10 px-6">
+    <header class="mb-10 flex justify-between items-end">
+        <div>
+            <h1 class="text-4xl font-extrabold text-teal-600">Admin Dashboard</h1>
+            <p class="text-gray-500 mt-1">Welcome back, <strong>{{ name }}</strong> ({{ role }})</p>
+        </div>
+        <a href="/" class="text-sm text-gray-500 hover:text-gray-800 underline">Return to Public Site</a>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-md border-t-4 border-teal-500 h-fit">
+            <h2 class="text-2xl font-bold mb-4">Publish New Event</h2>
+            
+            <form action="/admin/add" method="POST" class="space-y-4" x-data="{ eventType: 'TechnicalWorkshop' }">
+                
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase">Event Name</label>
+                    <input type="text" name="name" required class="w-full border p-2 rounded mt-1 bg-gray-50">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase">Type</label>
+                    <select name="eventType" x-model="eventType" required class="w-full border p-2 rounded mt-1 bg-gray-50">
+                        <option value="TechnicalWorkshop">Technical Workshop</option>
+                        <option value="SocialEvent">Social Event</option>
+                        <option value="ProfessionalNetwork">Professional & Network</option>
+                        <option value="Conference">Conference</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase">Start Time</label>
+                        <input type="datetime-local" name="startTime" required class="w-full border p-2 rounded mt-1 bg-gray-50">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase">End Time</label>
+                        <input type="datetime-local" name="endTime" class="w-full border p-2 rounded mt-1 bg-gray-50">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase">Location</label>
+                    <input type="text" name="location" required class="w-full border p-2 rounded mt-1 bg-gray-50">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase">Perks</label>
+                        <input type="text" name="perks" placeholder="e.g. Pizza, Swag" class="w-full border p-2 rounded mt-1 bg-gray-50">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase">Flyer URL</label>
+                        <input type="url" name="flyer_img" placeholder="https://..." class="w-full border p-2 rounded mt-1 bg-gray-50">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase">Description</label>
+                    <textarea name="description" required rows="2" class="w-full border p-2 rounded mt-1 bg-gray-50"></textarea>
+                </div>
+
+                <div class="p-3 bg-gray-50 rounded border mt-2 min-h-[100px]">
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2 border-b pb-1">Type-Specific Details</label>
+                    
+                    <div x-show="eventType === 'TechnicalWorkshop'" class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700">Topic</label>
+                            <input type="text" name="topic" class="w-full border p-1 rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700">Level</label>
+                            <input type="text" name="level" placeholder="e.g., Beginner" class="w-full border p-1 rounded mt-1">
+                        </div>
+                    </div>
+
+                    <div x-show="eventType === 'SocialEvent'">
+                        <label class="block text-xs font-bold text-gray-700">Theme</label>
+                        <input type="text" name="theme" class="w-full border p-1 rounded mt-1">
+                    </div>
+
+                    <div x-show="eventType === 'ProfessionalNetwork'" class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700">Industry</label>
+                            <input type="text" name="industry" class="w-full border p-1 rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700">Speaker</label>
+                            <input type="text" name="speaker" class="w-full border p-1 rounded mt-1">
+                        </div>
+                    </div>
+
+                    <div x-show="eventType === 'Conference'">
+                        <label class="block text-xs font-bold text-gray-700">Volunteers Needed</label>
+                        <input type="text" name="volunteers" placeholder="e.g., 3" class="w-full border p-1 rounded mt-1">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-teal-600 text-white font-bold py-2 rounded hover:bg-teal-700 transition mt-4 shadow-md">
+                    Publish Event
+                </button>
+            </form>
+        </div>
+
+        <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Manage Events</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-600 text-xs uppercase tracking-wider">
+                            <th class="p-3 rounded-tl">Name</th>
+                            <th class="p-3">Type</th>
+                            <th class="p-3">Date</th>
+                            <th class="p-3 text-right rounded-tr">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        {% for event in events %}
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 font-semibold text-gray-900">{{ event.name }}</td>
+                            <td class="p-3 text-gray-500">{{ event.eventType }}</td>
+                            <td class="p-3">{{ event.startTime[:10] }}</td>
+                            <td class="p-3 text-right">
+                                <a href="/admin/delete/{{ event.id }}" 
+                                   onclick="return confirm('Delete {{ event.name }}? This cannot be undone.');" 
+                                   class="text-red-600 hover:text-red-800 font-bold bg-red-50 py-1 px-3 rounded inline-block">
+                                   Delete
+                                </a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4" class="p-8 text-center text-gray-400 italic">
+                                No events found. Add your first event using the form!
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
