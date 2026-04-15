@@ -19,6 +19,10 @@ def admin_required(f):
         return f(*args, **kwargs)
     return decorated
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/admin', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET' and 'email' in session:
