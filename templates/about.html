@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="bg-white py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-5xl font-bold text-gwc-pink mb-6 text-center">About Us</h1>
+
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center leading-relaxed mb-12">
+      Girls Who Code at the University of Michigan-Dearborn is a student-led organization
+      dedicated to closing the gender gap in technology. We create a supportive community
+      through technical workshops, professional development, mentorship, and outreach.
+    </p>
+
+    <h2 class="text-3xl font-bold text-gwc-pink mb-6 text-center">Board Members & Interns Who Make the Magic Happen</h2>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img
+          src="{{ url_for('static', filename='uploads/board.png') }}"
+          alt="Girls Who Code team"
+          class="rounded-2xl shadow-lg w-full object-cover"
+        >
+      </div>
+    
+      <div>
+        <img
+          src="{{ url_for('static', filename='uploads/interns.png') }}"
+          alt="Girls Who Code team"
+          class="rounded-2xl shadow-lg w-full object-cover"
+        >
+      </div>
+
+      <div>
+    <h2 class="text-3xl font-bold text-gwc-teal mb-4 mt-10">Our Mission</h2>
+    <p class="text-gray-700 leading-relaxed mb-10">
+      Our mission is to empower women in tech by creating spaces where students can grow
+      technically, professionally, and personally.
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+      
+      <img src="{{ url_for('static', filename='uploads/about-1.jpg') }}" 
+           class="rounded-xl object-cover w-full h-48 hover:scale-105 transition duration-300">
+      
+      <img src="{{ url_for('static', filename='uploads/SLA.jpg') }}" 
+           class="rounded-xl object-cover w-full h-64 hover:scale-105 transition duration-300">
+      
+      <img src="{{ url_for('static', filename='uploads/WLS.jpg') }}" 
+           class="rounded-xl object-cover w-full h-48 hover:scale-105 transition duration-300">
+    
+    
+    </div>
+
+
+        <h2 class="text-3xl font-bold text-gwc-teal mb-4 mt-8">What We Do</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li>Technical workshops in web development, AI, cybersecurity, and more</li>
+          <li>Professional development events and networking opportunities</li>
+          <li>Mentorship for K-12 students and college members</li>
+          <li>Community-building events that strengthen sisterhood</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
