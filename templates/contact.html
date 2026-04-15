@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="bg-white">
+
+  <!-- HEADER -->
+  <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+    <p class="uppercase tracking-[0.2em] text-sm text-gwc-teal font-semibold mb-4">
+      Get In Touch
+    </p>
+
+    <h1 class="text-5xl font-bold text-gwc-pink mb-6">
+      Contact Us
+    </h1>
+
+    <p class="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+      Whether you're a student, partner, or organization, we’d love to hear from you.
+      Reach out with any questions, ideas, or collaboration opportunities.
+    </p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+    <!-- LEFT SIDE -->
+    <div>
+      <h2 class="text-2xl font-bold text-gwc-teal mb-6">
+        Connect With Us
+      </h2>
+
+      <div class="space-y-5 text-gray-700">
+        <p>
+          <span class="font-semibold">Email:</span><br>
+          girlswhocodeumdearborn@gmail.com
+        </p>
+
+        <p>
+          <span class="font-semibold">Instagram:</span><br>
+          @gwc_umdearborn
+        </p>
+
+        <p>
+          <span class="font-semibold">LinkedIn:</span><br>
+          Girls Who Code UM-Dearborn
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <img
+          src="{{ url_for('static', filename='uploads/gwclogo.png') }}"
+          class="w-full h-[300px] object-cover rounded-2xl shadow-md"
+          alt="Girls Who Code UM-Dearborn"
+        >
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="bg-[#f9fcfc] p-8 rounded-3xl shadow-sm">
+      <h2 class="text-2xl font-bold text-gwc-pink mb-6">
+        Send a Message
+      </h2>
+
+      <form action="{{ url_for('contact') }}" method="POST" class="space-y-5">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gwc-pink"
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gwc-pink"
+        >
+
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gwc-pink"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="w-full bg-gwc-pink text-white py-3 rounded-xl font-semibold hover:opacity-90 transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER SUBSCRIBE SECTION -->
+  <div class="max-w-4xl mx-auto px-6 pb-20">
+    <div class="bg-gwc-pink text-white rounded-3xl p-10 text-center shadow-md">
+      <h2 class="text-3xl font-bold mb-4">Stay in the Loop</h2>
+      <p class="text-lg mb-6">
+        Subscribe to our newsletter to stay updated on events, opportunities, and everything happening at Girls Who Code UM-Dearborn.
+      </p>
+
+      <a
+        href="https://girls-who-codes-newsletter.beehiiv.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-white text-gwc-pink font-semibold px-8 py-3 rounded-xl hover:opacity-90 transition"
+      >
+        Subscribe to Our Newsletter
+      </a>
+    </div>
+  </div>
+
+</section>
+{% endblock %}
