@@ -9,28 +9,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
     <script>
         tailwind.config = {
-        keyframes: {
-                growLine: {
-                    '0%': { transform: 'scaleX(0)' },
-                    '100%': { transform: 'scaleX(1)' },
-                },
-                popIn: {
-                    '0%': { transform: 'scale(0)', opacity: '0' },
-                    '80%': { transform: 'scale(1.2)', opacity: '1' },
-                    '100%': { transform: 'scale(1)', opacity: '1' },
-                }
-                },
-                animation: {
-                // The line takes 1 second to grow
-                'grow-line': 'growLine 1s ease-out forwards',
-                // The dot pops in quickly with a little bounce effect
-                'pop-in': 'popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
-                },
             theme: {
                 extend: {
+                    keyframes: {
+                    growLine: {
+                        '0%': { transform: 'scaleX(0)' },
+                        '100%': { transform: 'scaleX(1)' },
+                    },
+                    popIn: {
+                        '0%': { transform: 'scale(0)', opacity: '0' },
+                        '80%': { transform: 'scale(1.2)', opacity: '1' },
+                        '100%': { transform: 'scale(1)', opacity: '1' },
+                    }
+                },
+                    animation: {
+                    'grow-line': 'growLine 1s ease-out forwards',
+                    'pop-in': 'popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+                    },
                     fontFamily: {
                         eb: ['EB Garamond', 'serif']
                     },
@@ -57,12 +56,12 @@
             </div>
 
             <div class="space-x-10 font-medium text-sm flex items-center">
-                <a href="#home" class="text-black hover:text-gwc-pink transition">Home</a>
-                <a href="#about" class="text-black hover:text-gwc-pink transition">About</a>
-                <a href="#events" class="text-black hover:text-gwc-pink transition">Events</a>
-                <a href="#resources" class="text-black hover:text-gwc-pink transition">Resources</a>
-                <a href="#newsletter" class="text-black hover:text-gwc-pink transition">Newsletter</a>
-                <a href="#donate" class="text-black hover:text-gwc-pink transition">Donate</a>
+                <a href="/" class="text-black hover:text-gwc-pink transition">Home</a>
+                <a href="/about" class="text-black hover:text-gwc-pink transition">About</a>
+                <a href="/events" class="text-black hover:text-gwc-pink transition">Events</a>
+                <a href="/resources" class="text-black hover:text-gwc-pink transition">Resources</a>
+                <a href="/newsletter" class="text-black hover:text-gwc-pink transition">Newsletter</a>
+                <a href="/donate" class="text-black hover:text-gwc-pink transition">Donate</a>
 
             </div>
         </div>
