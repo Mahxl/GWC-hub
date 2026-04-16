@@ -161,7 +161,7 @@ def techher():
 
 @app.route('/newsletter')
 def newsletter():
-    return render_template("newsletter.html")
+    return render_template("contact.html")
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
