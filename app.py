@@ -77,6 +77,47 @@ def admin_resources():
 @app.route('/admin/add', methods=['POST'])
 @admin_required
 def add():
+    db = supabase_cf()
+    def parse(field_name):
+        val = request.form.get(field_name)
+        if not val or val.strip() == "":
+            return [] 
+        return [item.strip() for item in val.split(',')]
+
+    def clean(field_name):
+        val = request.form.get(field_name)
+        if not val or val.strip() == "":
+            return None
+        return val.strip()
+
+
+    eventData = {
+        "name": clean("name"),
+        "eventType": clean("eventType"),
+        "startTime": clean("startTime"),
+        "endTime": clean("endTime"),
+        "location": clean("location"),
+        "description": clean("description"),
+        "flyer_img": clean("flyer_img"),
+        "perks": parse("perks"),  
+        
+        #these are the custom per evnt type in factory
+        "speaker": parse("speaker"), 
+        "topic": clean("topic"),
+        "theme": clean("theme"),
+        "level": clean("level"),
+        "industry": clean("industry"),
+        "volunteers": clean("volunteers") 
+    }
+    
+    cleanData = {k: v for k, v in eventData.items() if v is not None}
+    
+    try:
+        db.table('events').insert(cleanData).execute()
+        print(f"SUCCESS: Event '{cleanData.get('name')}' published.")
+    except Exception as e:
+        print(f"ERROR: Could not save to Supabase: {e}")
+        return "Database Error", 500
     return redirect(url_for('dashboard'))
 
 @app.route('/admin/delete/<int:event_id>')
@@ -114,6 +155,10 @@ def showEvents():
 @app.route('/techHer')
 def techher():
     return render_template('techHer.html')
+
+@app.route('/newsletter')
+def newsletter():
+    return render_template('newsletter.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
