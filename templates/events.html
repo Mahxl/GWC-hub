@@ -211,7 +211,7 @@
         </div>
     </section>
 
-    <section>
+   <section class="pb-20">
         <div class="flex items-center w-full mx-auto px-4 gap-6 mt-8 mb-10">
             <h2 class="text-left text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-200 whitespace-nowrap uppercase">
                 Past Events
@@ -221,7 +221,52 @@
                 <div class="h-1 w-[3000px] bg-gray-50 animate-grow-line origin-left ml-2"></div>
             </div>
         </div>
-        </section>
+
+        <div class="max-w-7xl mx-auto px-6 opacity-60 grayscale-[50%]"> <div class="bg-white rounded-2xl border-4 border-gray-200 shadow-lg overflow-x-auto">
+                <table class="w-full min-w-[900px]">
+                    <thead>
+                        <tr class="border-b-2 border-gray-100 bg-gray-100">
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Previous Event</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Location</th>
+                            <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        {% for event in past %}
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="min-w-0">
+                                        <p class="font-bold text-gray-700 text-lg">{{ event.name }}</p>
+                                        <p class="text-sm text-gray-400 font-medium">{{ event.description }}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-6 text-sm text-gray-500 font-medium">
+                                {{ event.startTime.split(' at ')[0] }}
+                            </td>
+                            <td class="px-6 py-6 text-sm text-gray-500 italic">
+                                {{ event.location }}
+                            </td>
+                            <td class="px-6 py-6 text-right">
+                                <span class="bg-gray-100 text-gray-400 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+                                    COMPLETED
+                                </span>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4" class="px-6 py-10 text-center text-gray-300 italic">
+                                No past events to display yet.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 </div>
 </section>
 {% endblock %}
