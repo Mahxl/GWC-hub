@@ -1,10 +1,13 @@
-from flask import Flask, render_template, request, session, redirect, url_for    
+from flask import Flask, render_template, request, session, redirect, url_for, flash
 import os
 from models.eventFactory import EventFactory
 from config.database import supabase_cf
 from services.event_strategy import PastEventStrategy, UpcomingEventStrategy
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import smtplib
 
 app = Flask(__name__)
 app.secret_key = 'gwc_dearborn2026'  
