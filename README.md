@@ -17,7 +17,7 @@ Main components:
 3. View upcoming events and past events, add events to calander and RSVP
 4. Contact eboard members
 5. Subscribe to newsletter
-6. Admins login to publish new events and resources for members
+6. superAdmin login to publish new events and resources for members
 
 HOW TO DEPLOY:
 This application is built with Flask and uses a cloud-hosted **Supabase** (PostgreSQL) database. It is designed to be seamlessly deployed on platforms like [Render](https://render.com).
@@ -27,11 +27,14 @@ Flask's built-in development server cannot be used in production. Ensure the `gu
 
 pip install gunicorn
 pip freeze > requirements.txt
+
+
 Future Implementations: 
 1. Email members when they RSVP
 2. Allow admins to push articles
 3. change photos/gallery from static to photos that admins can uplaod/change as well as the stats
 4. complete the donation page
+5. superAdmin is able to add admins and assign a new superAdmin
 
 Design Patters and architectues used: 
 1. decorative
